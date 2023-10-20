@@ -1,11 +1,11 @@
-import { useApiCall } from "../../hook/useApiCall.jsx";
+import { useApiCallHome } from "../../hook/useApiCallHome.jsx";
 import spinner from "../../assets/svg/spinner.svg";
 import Card from "../../components/card/Card.jsx";
 import BannerHome from "../../components/bannerHome/BannerHome.jsx";
 import HomeStyle from "./Home.module.scss";
 
 const Home = () => {
-  const { apiState } = useApiCall();
+  const { apiState } = useApiCallHome();
   let content;
 
   if (apiState.loading) {

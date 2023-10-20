@@ -1,7 +1,7 @@
-import { Housing } from "../data/Housing.json";
+import { AboutData } from "../data/AboutData.json";
 import { useEffect, useState } from "react";
 
-export const useApiCall = () => {
+export const useApiCallAbout = () => {
   const [apiState, setApiState] = useState({
     loading: false,
     error: false,
@@ -11,12 +11,11 @@ export const useApiCall = () => {
   useEffect(() => {
     setApiState({ ...apiState, loading: true });
     try {
-      if (!Housing) {
-        throw new Error("Error loading housing data");
+      if (!AboutData) {
+        throw new Error("Error loading AboutData data");
       }
-      console.log(Housing);
-
-      setApiState({ loading: false, error: false, data: Housing });
+      console.log(AboutData);
+      setApiState({ loading: false, error: false, data: AboutData });
     } catch (error) {
       console.log("An unexpected error occurred : " + error);
       setApiState({ loading: false, error: true, data: undefined });

@@ -1,0 +1,28 @@
+.main {
+  margin: 130px 100px;
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 130px;
+
+    img {
+      width: 45%;
+    }
+
+    p {
+      font-size: 36px;
+      font-weight: 500;
+      color: #ff6060;
+    }
+
+    span {
+      color: #ff6060;
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}
