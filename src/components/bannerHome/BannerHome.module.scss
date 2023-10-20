@@ -1,0 +1,20 @@
+.section__bannerHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  width: 100%;
+  height: 230px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../../../src/assets/img/bannerHome.png");
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
+
+  & h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #ffff;
+  }
+}

@@ -1,8 +1,12 @@
+import "./Footer.module.scss";
+import logoFooter from "../../assets/svg/logoFooter.svg";
+
 const Footer = () => {
   return (
-    <div>
-      <h1>Je suis Footer</h1>
-    </div>
+    <footer>
+      <img src={logoFooter} alt="logo kasa" />
+      <p>© 2020 Kasa. All rights reserved</p>
+    </footer>
   );
 };
 

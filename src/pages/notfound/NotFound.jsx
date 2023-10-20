@@ -1,8 +1,10 @@
+// import { NotFoundStyle } from "./_NotFound.scss";
+
 const NotFound = () => {
   return (
-    <div>
+    <main>
       <h1>Bienvenue NotFound</h1>
-    </div>
+    </main>
   );
 };
 

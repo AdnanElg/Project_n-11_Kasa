@@ -1,8 +1,10 @@
+// import { HousingStyle } from "./Housing.scss";
+
 const Housing = () => {
   return (
-    <div>
+    <main>
       <h1>Bienvenue Housing</h1>
-    </div>
+    </main>
   );
 };
 

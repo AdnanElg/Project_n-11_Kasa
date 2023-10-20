@@ -1,8 +1,10 @@
+// import { AboutStyle } from "./About.scss";
+
 const About = () => {
   return (
-    <div>
+    <main>
       <h1>Bienvenue About</h1>
-    </div>
+    </main>
   );
 };
 

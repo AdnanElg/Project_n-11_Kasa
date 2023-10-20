@@ -1,0 +1,15 @@
+.main {
+  margin: 50px 100px;
+
+  .section__cards {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    padding: 50px;
+    margin-top: 50px;
+  }
+}
