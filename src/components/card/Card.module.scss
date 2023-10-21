@@ -2,6 +2,8 @@
   position: relative;
   width: 380px;
   height: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
   &:hover {
@@ -13,7 +15,20 @@
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .boxShadow {
+    background: linear-gradient(
+      180deg,
+      rgba(248, 255, 253, 0),
+      rgba(31, 36, 35, 0.749) 46%
+    );
+    bottom: 0;
+    height: 72px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
   }
 
   h3 {

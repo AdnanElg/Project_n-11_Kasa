@@ -14,6 +14,7 @@
     padding: 15px;
     border-radius: 5px;
     width: 85%;
+    z-index: 1;
 
     h3 {
       color: #fff;
@@ -39,18 +40,19 @@
         }
       }
 
-      &.toggleDown {
-        animation: rotateDown 0.5s forwards;
-      }
+      // ! A voir pourquoi la functiionaliter ne marche pas a cause de l'etat false qui est active directement
+      // &.toggleDown {
+      //   animation: rotateDown 0.5s forwards;
+      // }
 
-      @keyframes rotateDown {
-        from {
-          transform: rotate(-180deg);
-        }
-        to {
-          transform: rotate(0deg);
-        }
-      }
+      // @keyframes rotateDown {
+      //   from {
+      //     transform: rotate(-180deg);
+      //   }
+      //   to {
+      //     transform: rotate(0deg);
+      //   }
+      // }
     }
   }
 
@@ -59,20 +61,37 @@
     width: 85%;
     height: auto;
     border-radius: 0px 0px 10px 10px;
-    animation-name: slideDown;
-    animation-duration: 1s;
-    animation-fill-mode: both;
 
     &.active {
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+      animation: slideDown 500ms both;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
       }
     }
+
+    // ! A voir pourquoi la functiionaliter ne marche pas a cause de l'etat false qui est active directement
+    // &.disabled {
+    //   animation: slideUp 500ms both;
+    // }
+
+    // @keyframes slideUp {
+    //   from {
+    //     opacity: 1;
+    //     transform: translateY(0px);
+    //   }
+    //   to {
+    //     opacity: 0;
+    //     transform: translateY(-100px);
+    //   }
+    // }
 
     p {
       margin: 20px;

@@ -18,11 +18,19 @@ const Dropdown = ({ dataTitle, dataDescription }) => {
           onClick={handleClick}
           src={arrow_top}
           alt={openDropdown ? "arrow bottom" : "arrow top"}
-          className={
-            openDropdown ? DropdownStyle.toggleUp : DropdownStyle.toggleDown
-          }
+          // className={
+          //   openDropdown ? DropdownStyle.toggleUp : DropdownStyle.toggleDown
+          // }
+          className={openDropdown ? DropdownStyle.toggleUp : ""}
         />
       </div>
+
+      {/* <div
+        className={`${DropdownStyle.content} ${
+          openDropdown ? DropdownStyle.active : DropdownStyle.disabled
+        }`}
+      > */}
+
       {openDropdown && (
         <div
           className={`${DropdownStyle.content} ${
