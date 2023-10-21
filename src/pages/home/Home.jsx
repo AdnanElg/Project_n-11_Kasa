@@ -1,28 +1,26 @@
 import { useApiCallHome } from "../../hook/useApiCallHome.jsx";
 import spinner from "../../assets/svg/spinner.svg";
 import Card from "../../components/card/Card.jsx";
-import BannerHome from "../../components/bannerHome/BannerHome.jsx";
+import Banner from "../../components/banner/Banner.jsx";
 import HomeStyle from "./Home.module.scss";
 
 const Home = () => {
   const { apiState } = useApiCallHome();
-  let content;
 
-  if (apiState.loading) {
-    content = <img src={spinner} alt="icône loading" />;
-  } else if (apiState.error) {
-    content = <p>Une erreur est survenue...</p>;
-  } else if (apiState.data?.length > 0) {
-    content = apiState.data.map((item) => (
-      <Card key={item.id} itemData={item} />
-    ));
-  } else if (apiState.data?.length === 0) {
-    content = <p>Votre requête ne correspond à aucune donnée.</p>;
-  }
   return (
-    <main className={HomeStyle.main}>
-      <BannerHome />
-      <section className={HomeStyle.section__cards}>{content}</section>
+    <main className={HomeStyle.container__main}>
+      <Banner />
+      <section className={HomeStyle.section__cards}>
+        {apiState.loading && <img src={spinner} alt="icône de chargeement" />}
+        {apiState.error && <p>Une erreur est survenue...</p>}
+        {apiState.data?.length > 0 &&
+          apiState.data.map((item) => (
+            <Card key={item.id} dataCover={item.cover} dataTitle={item.title} />
+          ))}
+        {apiState.data?.length === 0 && (
+          <p>Votre requête ne correspond à aucune donnée.</p>
+        )}
+      </section>
     </main>
   );
 };

@@ -1,14 +1,11 @@
 /* eslint-disable react/prop-types */
-import "./Card.module.scss";
+import CardStyle from "./Card.module.scss";
 
-const Card = ({ itemData }) => {
+const Card = ({ dataCover, dataTitle }) => {
   return (
-    <article>
-      <img
-        src={itemData.cover}
-        alt={`Image ${itemData.title} à ${itemData.location}`}
-      />
-      <h3>{itemData.location}</h3>
+    <article className={CardStyle.container__card}>
+      <img src={dataCover} alt={`Image ${dataTitle}`} />
+      <h3>{dataTitle}</h3>
     </article>
   );
 };

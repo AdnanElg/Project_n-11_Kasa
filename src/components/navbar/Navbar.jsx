@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header>
+    <header className={NavbarStyle.container__header}>
       <nav>
         <img src={logoHeader} alt="logo kasa" />
         <ul>
