@@ -3,7 +3,12 @@ import arrow_top from "../../assets/svg/arrow_top.svg";
 import { useState } from "react";
 import CollapseStyle from "./Collapse.module.scss";
 
-const Collapse = ({ dataTitle, dataDescription }) => {
+const Collapse = ({
+  dataTitle,
+  dataDescriptionAbout,
+  dataEquipment,
+  dataDescriptionHousing,
+}) => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
   const handleClick = () => {
@@ -37,7 +42,7 @@ const Collapse = ({ dataTitle, dataDescription }) => {
             openCollapse ? CollapseStyle.active : ""
           }`}
         >
-          <p>{dataDescription}</p>
+          <p>{dataDescriptionAbout}</p>
         </div>
       )}
     </div>

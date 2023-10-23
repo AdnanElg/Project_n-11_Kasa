@@ -7,6 +7,7 @@ import Location from "../../components/location/Location.jsx";
 import Host from "../../components/host/Host.jsx";
 import Tag from "../../components/tag/Tag.jsx";
 import Rating from "../../components/rating/Rating.jsx";
+import Collapse from "../../components/collapse/Collapse.jsx";
 
 const Housing = () => {
   const { id } = useParams();
@@ -41,6 +42,18 @@ const Housing = () => {
               <Rating
                 key={apiState.data.id}
                 dataRating={apiState.data.rating}
+              />
+            </div>
+            <div className={HousingStyle.collapse}>
+              <Collapse
+                key={apiState.data.id}
+                dataEquipment={apiState.data.equipments}
+                dataDescriptionHousing={apiState.data.description}
+              />
+              <Collapse
+                key={apiState.data.id}
+                dataEquipment={apiState.data.equipments}
+                dataDescriptionHousing={apiState.data.description}
               />
             </div>
           </>

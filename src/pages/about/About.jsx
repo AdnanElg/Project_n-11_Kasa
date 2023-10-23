@@ -18,7 +18,7 @@ const About = () => {
             <Collapse
               key={item.id}
               dataTitle={item.title}
-              dataDescription={item.description}
+              dataDescriptionAbout={item.description}
             />
           ))}
       </section>

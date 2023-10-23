@@ -10,5 +10,12 @@
       align-items: center;
       margin: 10px;
     }
+
+    .collapse {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+    }
   }
 }
