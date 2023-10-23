@@ -8,6 +8,8 @@ const Collapse = ({
   dataDescriptionAbout,
   dataEquipment,
   dataDescriptionHousing,
+  titleDescription,
+  titleEquipement,
 }) => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
@@ -18,7 +20,11 @@ const Collapse = ({
   return (
     <div className={CollapseStyle.container}>
       <div className={CollapseStyle.collapse}>
-        <h3>{dataTitle}</h3>
+        <h3>
+          {dataTitle}
+          {titleDescription}
+          {titleEquipement}
+        </h3>
         <img
           onClick={handleClick}
           src={arrow_top}
@@ -42,7 +48,19 @@ const Collapse = ({
             openCollapse ? CollapseStyle.active : ""
           }`}
         >
-          <p>{dataDescriptionAbout}</p>
+          <p>
+            {dataDescriptionAbout}
+            {dataDescriptionHousing}
+
+            {dataEquipment?.length > 0 && (
+              <ul>
+                {dataEquipment.map((item, index) => {
+                  console.log(item, index);
+                  return <li key={index}>{item}</li>;
+                })}
+              </ul>
+            )}
+          </p>
         </div>
       )}
     </div>

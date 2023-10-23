@@ -47,13 +47,13 @@ const Housing = () => {
             <div className={HousingStyle.collapse}>
               <Collapse
                 key={apiState.data.id}
-                dataEquipment={apiState.data.equipments}
                 dataDescriptionHousing={apiState.data.description}
+                titleDescription="Description"
               />
               <Collapse
                 key={apiState.data.id}
                 dataEquipment={apiState.data.equipments}
-                dataDescriptionHousing={apiState.data.description}
+                titleEquipement="Équipements"
               />
             </div>
           </>
