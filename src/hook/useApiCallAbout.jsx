@@ -5,7 +5,7 @@ export const useApiCallAbout = () => {
   const [apiState, setApiState] = useState({
     loading: false,
     error: false,
-    data: undefined,
+    data: null,
   });
 
   useEffect(() => {
@@ -14,11 +14,11 @@ export const useApiCallAbout = () => {
       if (!AboutData) {
         throw new Error("Error loading AboutData data");
       }
-      console.log(AboutData);
       setApiState({ loading: false, error: false, data: AboutData });
+      console.log(AboutData);
     } catch (error) {
       console.log("An unexpected error occurred : " + error);
-      setApiState({ loading: false, error: true, data: undefined });
+      setApiState({ loading: false, error: true, data: null });
     }
   }, []);
 

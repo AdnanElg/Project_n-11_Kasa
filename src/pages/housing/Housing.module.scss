@@ -1,0 +1,14 @@
+.container__main {
+  margin: 50px 100px;
+
+  .section__housing {
+    display: block;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px;
+    }
+  }
+}

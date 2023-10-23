@@ -1,0 +1,40 @@
+.carrouselGallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  .arrowBack {
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .visible {
+    display: block;
+    width: 100%;
+    height: 465px;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .arrowNext {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+}

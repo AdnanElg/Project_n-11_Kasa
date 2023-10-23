@@ -1,0 +1,19 @@
+.host {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6060;
+    width: 45%;
+    line-height: 25px;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+  }
+}

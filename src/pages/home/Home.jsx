@@ -15,7 +15,12 @@ const Home = () => {
         {apiState.error && <p>Une erreur est survenue...</p>}
         {apiState.data?.length > 0 &&
           apiState.data.map((item) => (
-            <Card key={item.id} dataCover={item.cover} dataTitle={item.title} />
+            <Card
+              key={item.id}
+              dataCover={item.cover}
+              dataTitle={item.title}
+              dataId={item.id}
+            />
           ))}
         {apiState.data?.length === 0 && (
           <p>Votre requête ne correspond à aucune donnée.</p>

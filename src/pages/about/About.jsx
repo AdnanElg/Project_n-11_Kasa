@@ -1,5 +1,5 @@
 import Banner from "../../components/banner/Banner.jsx";
-import Dropdown from "../../components/dropdown/Dropdown.jsx";
+import Collapse from "../../components/collapse/Collapse.jsx";
 import AboutStyle from "../about/About.module.scss";
 import spinner from "../../assets/svg/spinner.svg";
 import { useApiCallAbout } from "../../hook/useApiCallAbout.jsx";
@@ -15,7 +15,7 @@ const About = () => {
       <section>
         {apiState.data?.length > 0 &&
           apiState.data.map((item) => (
-            <Dropdown
+            <Collapse
               key={item.id}
               dataTitle={item.title}
               dataDescription={item.description}
