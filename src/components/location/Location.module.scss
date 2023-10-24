@@ -9,6 +9,23 @@
     font-size: 36px;
     font-weight: 500;
     color: #ff6060;
+
+    @media (max-width: 1300px) {
+      max-width: 450px;
+      line-height: 45px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 475px) {
+      font-size: 27px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 24px;
+    }
   }
 
   p {

@@ -3,6 +3,10 @@
   flex-direction: row;
   gap: 10px;
 
+  @media (max-width: 400px) {
+    gap: 3px;
+  }
+
   i {
     font-size: 25px;
     font-weight: 600;

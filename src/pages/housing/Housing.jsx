@@ -24,19 +24,21 @@ const Housing = () => {
               dataPictures={apiState.data.pictures}
               dataTitle={apiState.data.title}
             />
-            <div className={HousingStyle.content}>
-              <Location
-                dataTitle={apiState.data.title}
-                dataLocation={apiState.data.location}
-              />
-              <Host
-                dataHostName={apiState.data.host.name}
-                dataHostPiture={apiState.data.host.picture}
-              />
-            </div>
-            <div className={HousingStyle.content}>
-              <Tag dataTags={apiState.data.tags} />
-              <Rating dataRating={apiState.data.rating} />
+            <div className={HousingStyle.containerContent}>
+              <div className={HousingStyle.content1}>
+                <Location
+                  dataTitle={apiState.data.title}
+                  dataLocation={apiState.data.location}
+                />
+                <Tag dataTags={apiState.data.tags} />
+              </div>
+              <div className={HousingStyle.content2}>
+                <Host
+                  dataHostName={apiState.data.host.name}
+                  dataHostPiture={apiState.data.host.picture}
+                />
+                <Rating dataRating={apiState.data.rating} />
+              </div>
             </div>
             <div className={HousingStyle.collapse}>
               <Collapse

@@ -9,11 +9,21 @@
     color: #ff6060;
     width: 45%;
     line-height: 25px;
+
+    @media (max-width: 400px) {
+      width: 40%;
+      font-size: 16px;
+    }
   }
 
   img {
     border-radius: 50%;
     width: 80px;
     height: 80px;
+
+    @media (max-width: 360px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 }
