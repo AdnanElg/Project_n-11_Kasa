@@ -11,9 +11,36 @@
   background-color: rgba(0, 0, 0, 0.3) !important;
   background-blend-mode: darken;
 
+  @media (max-width: 500px) {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
   & h1 {
     font-size: 48px;
     font-weight: 500;
     color: #ffff;
+
+    @media (max-width: 800px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 650px) {
+      font-size: 35px;
+    }
+
+    @media (max-width: 550px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 35px;
+      width: 280px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 30px;
+      width: 235px;
+    }
   }
 }
