@@ -6,6 +6,10 @@
   margin-top: 35px;
   width: 90%;
 
+  @media (max-width: 1140px) {
+    width: 100%;
+  }
+
   .collapse {
     display: flex;
     flex-direction: row;
@@ -22,6 +26,10 @@
       font-size: 24px;
       font-weight: 500;
       letter-spacing: 2px;
+
+      @media (max-width: 600px) {
+        font-size: 20px;
+      }
     }
 
     img {

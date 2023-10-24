@@ -1,6 +1,14 @@
 .container__main {
   margin: 50px 100px;
 
+  @media (max-width: 1140px) {
+    margin: 50px 30px;
+  }
+
+  @media (max-width: 600px) {
+    margin: 50px 10px;
+  }
+
   section {
     margin-top: 10px;
     display: flex;
