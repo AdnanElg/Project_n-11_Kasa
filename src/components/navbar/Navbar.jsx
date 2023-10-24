@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <header className={NavbarStyle.container__header}>
       <nav>
-        <img src={logoHeader} alt="logo kasa" />
+        <NavLink to="/">
+          <img src={logoHeader} alt="logo kasa" />
+        </NavLink>
         <ul>
           <NavLink
             to="/"

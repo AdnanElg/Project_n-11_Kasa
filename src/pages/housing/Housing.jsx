@@ -21,37 +21,29 @@ const Housing = () => {
         {apiState.data && (
           <>
             <Carrousel
-              key={apiState.data.id}
               dataPictures={apiState.data.pictures}
               dataTitle={apiState.data.title}
             />
             <div className={HousingStyle.content}>
               <Location
-                key={apiState.data.id}
                 dataTitle={apiState.data.title}
                 dataLocation={apiState.data.location}
               />
               <Host
-                key={apiState.data.id}
                 dataHostName={apiState.data.host.name}
                 dataHostPiture={apiState.data.host.picture}
               />
             </div>
             <div className={HousingStyle.content}>
-              <Tag key={apiState.data.id} dataTags={apiState.data.tags} />
-              <Rating
-                key={apiState.data.id}
-                dataRating={apiState.data.rating}
-              />
+              <Tag dataTags={apiState.data.tags} />
+              <Rating dataRating={apiState.data.rating} />
             </div>
             <div className={HousingStyle.collapse}>
               <Collapse
-                key={apiState.data.id}
                 dataDescriptionHousing={apiState.data.description}
                 titleDescription="Description"
               />
               <Collapse
-                key={apiState.data.id}
                 dataEquipment={apiState.data.equipments}
                 titleEquipement="Équipements"
               />
