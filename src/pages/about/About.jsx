@@ -22,7 +22,7 @@ const About = () => {
             />
           ))}
       </section>
-      {apiState.data?.length === 0 && (
+      {apiState.data === null && (
         <p>Votre requête ne correspond à aucune donnée.</p>
       )}
     </main>

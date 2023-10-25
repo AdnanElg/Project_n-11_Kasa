@@ -11,19 +11,16 @@ export const useApiCallHousing = (id) => {
   useEffect(() => {
     setApiState({ ...apiState, loading: true });
     try {
-      if (!HousingData) {
-        throw new Error("Error loading housing data");
-      }
       const housingById = HousingData.find((databyId) => databyId.id === id);
+
       if (housingById) {
         setApiState({ loading: false, error: false, data: housingById });
-        console.log(housingById);
-      } else {
-        throw new Error("No housing found with this ID");
       }
     } catch (error) {
-      console.log("An unexpected error occurred : " + error);
-      setApiState({ loading: false, error: true, data: null });
+      throw (
+        (new Error("An unexpected error occurred : " + error),
+        setApiState({ loading: false, error: true, data: null }))
+      );
     }
   }, []);
 

@@ -11,14 +11,12 @@ export const useApiCallHome = () => {
   useEffect(() => {
     setApiState({ ...apiState, loading: true });
     try {
-      if (!HousingData) {
-        throw new Error("Error loading housing data");
-      }
       setApiState({ loading: false, error: false, data: HousingData });
-      console.log(HousingData);
     } catch (error) {
-      console.log("An unexpected error occurred : " + error);
-      setApiState({ loading: false, error: true, data: null });
+      throw (
+        (new Error("An unexpected error occurred : " + error),
+        setApiState({ loading: false, error: true, data: null }))
+      );
     }
   }, []);
 

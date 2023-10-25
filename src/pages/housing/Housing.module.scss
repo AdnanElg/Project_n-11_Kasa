@@ -24,7 +24,7 @@
         display: block;
       }
 
-      .content1 {
+      .propertyInfoContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -33,7 +33,7 @@
         gap: 15px;
       }
 
-      .content2 {
+      .hostInfoContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;

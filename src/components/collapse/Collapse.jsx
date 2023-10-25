@@ -51,11 +51,9 @@ const Collapse = ({
           <p>
             {dataDescriptionAbout}
             {dataDescriptionHousing}
-
             {dataEquipment?.length > 0 && (
               <ul>
                 {dataEquipment.map((item, index) => {
-                  console.log(item, index);
                   return <li key={index}>{item}</li>;
                 })}
               </ul>

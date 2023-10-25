@@ -7,13 +7,13 @@ import { useState } from "react";
 const Carrousel = ({ dataPictures, dataTitle }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToPreviousSlide = () => {
+  const handlePreviousSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? dataPictures.length - 1 : prevIndex - 1
     );
   };
 
-  const goToNextSlide = () => {
+  const handleNextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === dataPictures.length - 1 ? 0 : prevIndex + 1
     );
@@ -21,7 +21,7 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
 
   return (
     <div className={CarrouselStyle.carrouselGallery}>
-      <span className={CarrouselStyle.arrowBack} onClick={goToPreviousSlide}>
+      <span className={CarrouselStyle.arrowBack} onClick={handlePreviousSlide}>
         {dataPictures.length >= 2 && <img src={arrow_back} alt="arrow back" />}
       </span>
       {dataPictures.map((item, index) => {
@@ -38,7 +38,7 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
           />
         );
       })}
-      <span className={CarrouselStyle.arrowNext} onClick={goToNextSlide}>
+      <span className={CarrouselStyle.arrowNext} onClick={handleNextSlide}>
         {dataPictures.length >= 2 && <img src={arrow_next} alt="arrow next" />}
       </span>
     </div>

@@ -11,14 +11,12 @@ export const useApiCallAbout = () => {
   useEffect(() => {
     setApiState({ ...apiState, loading: true });
     try {
-      if (!AboutData) {
-        throw new Error("Error loading AboutData data");
-      }
       setApiState({ loading: false, error: false, data: AboutData });
-      console.log(AboutData);
     } catch (error) {
-      console.log("An unexpected error occurred : " + error);
-      setApiState({ loading: false, error: true, data: null });
+      throw (
+        (new Error("An unexpected error occurred : " + error),
+        setApiState({ loading: false, error: true, data: null }))
+      );
     }
   }, []);
 

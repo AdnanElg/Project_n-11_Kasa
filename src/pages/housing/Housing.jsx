@@ -25,14 +25,14 @@ const Housing = () => {
               dataTitle={apiState.data.title}
             />
             <div className={HousingStyle.containerContent}>
-              <div className={HousingStyle.content1}>
+              <div className={HousingStyle.propertyInfoContainer}>
                 <Location
                   dataTitle={apiState.data.title}
                   dataLocation={apiState.data.location}
                 />
                 <Tag dataTags={apiState.data.tags} />
               </div>
-              <div className={HousingStyle.content2}>
+              <div className={HousingStyle.hostInfoContainer}>
                 <Host
                   dataHostName={apiState.data.host.name}
                   dataHostPiture={apiState.data.host.picture}
@@ -52,7 +52,7 @@ const Housing = () => {
             </div>
           </>
         )}
-        {apiState.data === false && (
+        {apiState.data === null && (
           <p>Votre requête ne correspond à aucune donnée.</p>
         )}
       </section>
