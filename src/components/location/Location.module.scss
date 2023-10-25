@@ -1,3 +1,6 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .location {
   display: flex;
   justify-content: flex-start;
@@ -8,22 +11,22 @@
   h1 {
     font-size: 36px;
     font-weight: 500;
-    color: #ff6060;
+    color: variables.$quinary;
 
-    @media (max-width: 1300px) {
+    @include breakpoints.custom-media-query(1300) {
       max-width: 450px;
       line-height: 45px;
     }
 
-    @media (max-width: 600px) {
+    @include breakpoints.custom-media-query(600) {
       font-size: 30px;
     }
 
-    @media (max-width: 475px) {
+    @include breakpoints.custom-media-query(475) {
       font-size: 27px;
     }
 
-    @media (max-width: 400px) {
+    @include breakpoints.custom-media-query(400) {
       font-size: 24px;
     }
   }
@@ -31,6 +34,6 @@
   p {
     font-size: 20px;
     font-weight: 500;
-    color: #ff6060;
+    color: variables.$quinary;
   }
 }

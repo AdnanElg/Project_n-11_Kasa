@@ -1,9 +1,12 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .container {
   display: flex;
   flex-direction: row;
   gap: 10px;
 
-  @media (max-width: 400px) {
+  @include breakpoints.custom-media-query(400) {
     gap: 3px;
   }
 
@@ -13,10 +16,10 @@
   }
 
   .pinkStar {
-    color: #ff6060;
+    color: variables.$quinary;
   }
 
   .grayStar {
-    color: #e3e3e3;
+    color: variables.$septenary;
   }
 }

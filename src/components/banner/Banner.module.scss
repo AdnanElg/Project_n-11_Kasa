@@ -1,3 +1,6 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .section__banner {
   display: flex;
   justify-content: center;
@@ -8,10 +11,10 @@
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
-  background-color: rgba(0, 0, 0, 0.3) !important;
+  background-color: variables.$secondary !important;
   background-blend-mode: darken;
 
-  @media (max-width: 500px) {
+  @include breakpoints.custom-media-query(500) {
     justify-content: flex-start;
     padding-left: 20px;
   }
@@ -19,26 +22,26 @@
   & h1 {
     font-size: 48px;
     font-weight: 500;
-    color: #ffff;
+    color: variables.$tertiary;
 
-    @media (max-width: 800px) {
+    @include breakpoints.custom-media-query(800) {
       font-size: 40px;
     }
 
-    @media (max-width: 650px) {
+    @include breakpoints.custom-media-query(650) {
       font-size: 35px;
     }
 
-    @media (max-width: 550px) {
+    @include breakpoints.custom-media-query(550) {
       font-size: 30px;
     }
 
-    @media (max-width: 500px) {
+    @include breakpoints.custom-media-query(500) {
       font-size: 35px;
       width: 280px;
     }
 
-    @media (max-width: 320px) {
+    @include breakpoints.custom-media-query(320) {
       font-size: 30px;
       width: 235px;
     }

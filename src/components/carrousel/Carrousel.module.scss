@@ -1,3 +1,5 @@
+@use "../../styles/utils/_breakpoints";
+
 .carrouselGallery {
   display: flex;
   flex-direction: row;
@@ -14,11 +16,11 @@
     img {
       width: 100%;
 
-      @media (max-width: 768px) {
+      @include breakpoints.custom-media-query(768) {
         width: 80%;
       }
 
-      @media (max-width: 600px) {
+      @include breakpoints.custom-media-query(600) {
         width: 60%;
       }
     }
@@ -41,22 +43,22 @@
     right: 20px;
     cursor: pointer;
 
-    @media (max-width: 770px) {
+    @include breakpoints.custom-media-query(770) {
       right: 10px;
     }
 
-    @media (max-width: 600px) {
+    @include breakpoints.custom-media-query(600) {
       right: 3px;
     }
 
     img {
       width: 100%;
 
-      @media (max-width: 768px) {
+      @include breakpoints.custom-media-query(768) {
         width: 80%;
       }
 
-      @media (max-width: 600px) {
+      @include breakpoints.custom-media-query(600) {
         width: 60%;
       }
     }

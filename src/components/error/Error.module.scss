@@ -1,3 +1,6 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .section__error {
   display: flex;
   justify-content: center;
@@ -13,29 +16,29 @@
   p {
     font-size: 36px;
     font-weight: 500;
-    color: #ff6060;
+    color: variables.$quinary;
     text-align: center;
 
-    @media (max-width: 768px) {
+    @include breakpoints.custom-media-query(768) {
       font-size: 30px;
     }
 
-    @media (max-width: 400px) {
+    @include breakpoints.custom-media-query(600) {
       font-size: 25px;
     }
 
-    @media (max-width: 330px) {
+    @include breakpoints.custom-media-query(350) {
       font-size: 23px;
     }
   }
 
   span {
-    color: #ff6060;
+    color: variables.$quinary;
     font-size: 20px;
     font-weight: 500;
     text-decoration: underline;
 
-    @media (max-width: 375px) {
+    @include breakpoints.custom-media-query(600) {
       font-size: 18px;
     }
   }

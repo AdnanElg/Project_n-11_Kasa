@@ -1,3 +1,5 @@
+@use "../../styles/utils/_variables";
+
 .container__tag {
   display: flex;
   flex-wrap: wrap;
@@ -7,14 +9,14 @@
   margin-top: 15px;
 
   .tag {
-    background-color: #ff6060;
+    background-color: variables.$quinary;
     border-radius: 10px;
     padding: 8px 10px;
 
     p {
       text-align: center;
       font-size: 14px;
-      color: #fff;
+      color: variables.$tertiary;
       font-weight: 500;
     }
   }

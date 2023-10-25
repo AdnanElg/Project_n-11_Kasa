@@ -1,11 +1,13 @@
+@use "../../styles/utils/_breakpoints";
+
 .container__main {
   margin: 50px 100px;
 
-  @media (max-width: 1140px) {
+  @include breakpoints.custom-media-query(1140) {
     margin: 50px 30px;
   }
 
-  @media (max-width: 600px) {
+  @include breakpoints.custom-media-query(600) {
     margin: 50px 10px;
   }
 

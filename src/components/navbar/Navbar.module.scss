@@ -1,11 +1,14 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .container__header {
   margin: 50px 100px;
 
-  @media (max-width: 1140px) {
+  @include breakpoints.custom-media-query(1140) {
     margin: 30px 30px;
   }
 
-  @media (max-width: 400px) {
+  @include breakpoints.custom-media-query(400) {
     margin: 5px 30px;
   }
 
@@ -14,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 400px) {
+    @include breakpoints.custom-media-query(400) {
       flex-direction: column;
       gap: 20px;
     }
@@ -24,23 +27,23 @@
       height: 68px;
       cursor: pointer;
 
-      @media (max-width: 1140px) {
+      @include breakpoints.custom-media-query(1140) {
         width: 180px;
       }
 
-      @media (max-width: 800px) {
+      @include breakpoints.custom-media-query(800) {
         width: 150px;
       }
 
-      @media (max-width: 600px) {
+      @include breakpoints.custom-media-query(600) {
         width: 130px;
       }
 
-      @media (max-width: 500px) {
+      @include breakpoints.custom-media-query(500) {
         width: 120px;
       }
 
-      @media (max-width: 400px) {
+      @include breakpoints.custom-media-query(400) {
         width: 130px;
       }
     }
@@ -52,19 +55,19 @@
       gap: 100px;
       list-style: none;
 
-      @media (max-width: 800px) {
+      @include breakpoints.custom-media-query(800) {
         gap: 70px;
       }
 
-      @media (max-width: 600px) {
+      @include breakpoints.custom-media-query(600) {
         gap: 50px;
       }
 
-      @media (max-width: 500px) {
+      @include breakpoints.custom-media-query(500) {
         gap: 30px;
       }
 
-      @media (max-width: 400px) {
+      @include breakpoints.custom-media-query(400) {
         gap: 50px;
       }
 
@@ -72,28 +75,28 @@
         text-decoration: none;
 
         &.active {
-          border-bottom: solid 2px #ff6060;
+          border-bottom: solid 2px variables.$quinary;
         }
 
         li {
           font-size: 24px;
           font-weight: 500;
-          color: #ff6060;
+          color: variables.$quinary;
 
-          @media (max-width: 800px) {
+          @include breakpoints.custom-media-query(800) {
             font-size: 22px;
           }
 
-          @media (max-width: 600px) {
+          @include breakpoints.custom-media-query(600) {
             font-size: 20px;
           }
 
-          @media (max-width: 500px) {
+          @include breakpoints.custom-media-query(500) {
             font-size: 16px;
             text-transform: uppercase;
           }
 
-          @media (max-width: 400px) {
+          @include breakpoints.custom-media-query(400) {
             font-size: 20px;
           }
         }

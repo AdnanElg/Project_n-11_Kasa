@@ -1,11 +1,14 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .container__main {
   margin: 50px 100px;
 
-  @media (max-width: 1140px) {
+  @include breakpoints.custom-media-query(1140) {
     margin: 50px 30px;
   }
 
-  @media (max-width: 500px) {
+  @include breakpoints.custom-media-query(500) {
     margin: 50px 10px;
   }
 
@@ -15,12 +18,12 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 80px;
-    background-color: #f6f6f6;
+    background-color: variables.$primary;
     border-radius: 25px;
     padding: 50px;
     margin-top: 50px;
 
-    @media (max-width: 650px) {
+    @include breakpoints.custom-media-query(650) {
       background: none;
       padding: 5px;
     }

@@ -1,12 +1,15 @@
+@use "../../styles/utils/_variables";
+@use "../../styles/utils/_breakpoints";
+
 .container__card {
   position: relative;
   width: 380px;
   height: 350px;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px variables.$secondary;
   cursor: pointer;
 
-  @media (max-width: 1140px) {
+  @include breakpoints.custom-media-query(1140) {
     width: 100%;
   }
 
@@ -22,11 +25,7 @@
   }
 
   .boxShadow {
-    background: linear-gradient(
-      180deg,
-      rgba(248, 255, 253, 0),
-      rgba(31, 36, 35, 0.749) 46%
-    );
+    background: linear-gradient(180deg, variables.$quaternary 46%);
     bottom: 0;
     height: 72px;
     left: 0;
@@ -39,7 +38,7 @@
     position: absolute;
     bottom: 0;
     font-weight: 500;
-    color: #ffffff;
+    color: variables.$tertiary;
     font-size: 22px;
     margin: 25px;
   }
