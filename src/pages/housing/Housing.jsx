@@ -1,7 +1,6 @@
-import HousingStyle from "./Housing.module.scss";
+import housingStyle from "./Housing.module.scss";
 import { useParams } from "react-router-dom";
 import { useApiCallHousing } from "../../hook/useApiCallHousing.jsx";
-import spinner from "../../assets/svg/spinner.svg";
 import Carrousel from "../../components/carrousel/Carrousel.jsx";
 import Location from "../../components/location/Location.jsx";
 import Host from "../../components/host/Host.jsx";
@@ -14,9 +13,8 @@ const Housing = () => {
   const { apiState } = useApiCallHousing(id);
 
   return (
-    <main className={HousingStyle.container__main}>
-      <section className={HousingStyle.section__housing}>
-        {apiState.loading && <img src={spinner} alt="icône de chargement" />}
+    <main className={housingStyle.container__main}>
+      <section className={housingStyle.container__main__sectionHousing}>
         {apiState.error && <p>Une erreur est survenue...</p>}
         {apiState.data && (
           <>
@@ -24,15 +22,27 @@ const Housing = () => {
               dataPictures={apiState.data.pictures}
               dataTitle={apiState.data.title}
             />
-            <div className={HousingStyle.containerContent}>
-              <div className={HousingStyle.propertyInfoContainer}>
+            <div
+              className={
+                housingStyle.container__main__sectionHousing__containerContent
+              }
+            >
+              <div
+                className={
+                  housingStyle.container__main__sectionHousing__containerContent__propertyInfoContainer
+                }
+              >
                 <Location
                   dataTitle={apiState.data.title}
                   dataLocation={apiState.data.location}
                 />
                 <Tag dataTags={apiState.data.tags} />
               </div>
-              <div className={HousingStyle.hostInfoContainer}>
+              <div
+                className={
+                  housingStyle.container__main__sectionHousing__containerContent__hostInfoContainer
+                }
+              >
                 <Host
                   dataHostName={apiState.data.host.name}
                   dataHostPiture={apiState.data.host.picture}
@@ -40,14 +50,16 @@ const Housing = () => {
                 <Rating dataRating={apiState.data.rating} />
               </div>
             </div>
-            <div className={HousingStyle.collapse}>
+            <div
+              className={housingStyle.container__main__sectionHousing__collapse}
+            >
               <Collapse
-                dataDescriptionHousing={apiState.data.description}
-                titleDescription="Description"
+                dataDescription={apiState.data.description}
+                datatitle="Description"
               />
               <Collapse
                 dataEquipment={apiState.data.equipments}
-                titleEquipement="Équipements"
+                datatitle="Équipements"
               />
             </div>
           </>

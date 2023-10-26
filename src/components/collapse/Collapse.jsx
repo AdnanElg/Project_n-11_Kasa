@@ -1,16 +1,9 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import arrow_top from "../../assets/svg/arrow_top.svg";
 import { useState } from "react";
-import CollapseStyle from "./Collapse.module.scss";
+import collapseStyle from "./Collapse.module.scss";
 
-const Collapse = ({
-  dataTitle,
-  dataDescriptionAbout,
-  dataEquipment,
-  dataDescriptionHousing,
-  titleDescription,
-  titleEquipement,
-}) => {
+const Collapse = ({ dataEquipment, dataDescription, datatitle }) => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
   const handleClick = () => {
@@ -18,51 +11,43 @@ const Collapse = ({
   };
 
   return (
-    <div className={CollapseStyle.container}>
-      <div className={CollapseStyle.collapse}>
-        <h3>
-          {dataTitle}
-          {titleDescription}
-          {titleEquipement}
-        </h3>
+    <div className={collapseStyle.container}>
+      <div className={collapseStyle.container__collapse}>
+        <h3>{datatitle}</h3>
         <img
           onClick={handleClick}
           src={arrow_top}
           alt={openCollapse ? "arrow bottom" : "arrow top"}
-          // className={
-          //   openCollapse ? CollapseStyle.toggleUp : CollapseStyle.toggleDown
-          // }
-          className={openCollapse ? CollapseStyle.toggleUp : ""}
+          className={
+            openCollapse ? collapseStyle.toggleUp : collapseStyle.toggleDown
+          }
         />
       </div>
 
-      {/* <div
-        className={`${CollapseStyle.content} ${
-          openCollapse ? CollapseStyle.active : CollapseStyle.disabled
+      <div
+        className={`${collapseStyle.container__content} ${
+          openCollapse ? collapseStyle.container__content__active : ""
         }`}
-      > */}
-
-      {openCollapse && (
-        <div
-          className={`${CollapseStyle.content} ${
-            openCollapse ? CollapseStyle.active : ""
-          }`}
-        >
-          <p>
-            {dataDescriptionAbout}
-            {dataDescriptionHousing}
-            {dataEquipment?.length > 0 && (
-              <ul>
-                {dataEquipment.map((item, index) => {
-                  return <li key={index}>{item}</li>;
-                })}
-              </ul>
-            )}
-          </p>
+      >
+        <div className={collapseStyle.container__content__text}>
+          {openCollapse && dataDescription && <p>{dataDescription}</p>}
+          {dataEquipment?.length > 0 && openCollapse && (
+            <ul>
+              {dataEquipment.map((item, index) => {
+                return <li key={index}>{item}</li>;
+              })}
+            </ul>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
+};
+
+Collapse.propTypes = {
+  dataEquipment: PropTypes.arrayOf(PropTypes.string),
+  dataDescription: PropTypes.string,
+  datatitle: PropTypes.string,
 };
 
 export default Collapse;

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
-import CarrouselStyle from "./Carrousel.module.scss";
+import PropTypes from "prop-types";
+import carrouselStyle from "./Carrousel.module.scss";
 import arrow_back from "../../assets/svg/arrow_back.svg";
 import arrow_next from "../../assets/svg/arrow_next.svg";
 import { useState } from "react";
@@ -20,9 +20,12 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
   };
 
   return (
-    <div className={CarrouselStyle.carrouselGallery}>
-      <span className={CarrouselStyle.arrowBack} onClick={handlePreviousSlide}>
-        {dataPictures.length >= 2 && <img src={arrow_back} alt="arrow back" />}
+    <div className={carrouselStyle.container__carrouselGallery}>
+      <span
+        className={carrouselStyle.container__carrouselGallery__arrowBack}
+        onClick={handlePreviousSlide}
+      >
+        {dataPictures.length > 1 && <img src={arrow_back} alt="arrow back" />}
       </span>
       {dataPictures.map((item, index) => {
         return (
@@ -32,17 +35,25 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
             alt={`carrousel image ${index} de housing : ${dataTitle}`}
             className={
               index === currentIndex
-                ? CarrouselStyle.visible
-                : CarrouselStyle.hidden
+                ? carrouselStyle.visible
+                : carrouselStyle.hidden
             }
           />
         );
       })}
-      <span className={CarrouselStyle.arrowNext} onClick={handleNextSlide}>
-        {dataPictures.length >= 2 && <img src={arrow_next} alt="arrow next" />}
+      <span
+        className={carrouselStyle.container__carrouselGallery__arrowNext}
+        onClick={handleNextSlide}
+      >
+        {dataPictures.length > 1 && <img src={arrow_next} alt="arrow next" />}
       </span>
     </div>
   );
+};
+
+Carrousel.propTypes = {
+  dataPictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dataTitle: PropTypes.string.isRequired,
 };
 
 export default Carrousel;

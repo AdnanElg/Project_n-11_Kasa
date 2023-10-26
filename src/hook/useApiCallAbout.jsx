@@ -3,13 +3,11 @@ import { useEffect, useState } from "react";
 
 export const useApiCallAbout = () => {
   const [apiState, setApiState] = useState({
-    loading: false,
     error: false,
     data: null,
   });
 
   useEffect(() => {
-    setApiState({ ...apiState, loading: true });
     try {
       setApiState({ loading: false, error: false, data: AboutData });
     } catch (error) {

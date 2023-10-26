@@ -1,6 +1,6 @@
 @use "../../styles/utils/_breakpoints";
 
-.carrouselGallery {
+.container__carrouselGallery {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8,7 +8,7 @@
   position: relative;
   overflow: hidden;
 
-  .arrowBack {
+  &__arrowBack {
     position: absolute;
     left: 20px;
     cursor: pointer;
@@ -38,7 +38,7 @@
     display: none;
   }
 
-  .arrowNext {
+  &__arrowNext {
     position: absolute;
     right: 20px;
     cursor: pointer;

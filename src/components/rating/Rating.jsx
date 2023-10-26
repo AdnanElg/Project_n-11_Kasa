@@ -1,23 +1,27 @@
-/* eslint-disable react/prop-types */
-import RatingStyle from "./Rating.module.scss";
+import PropTypes from "prop-types";
+import ratingStyle from "./Rating.module.scss";
 
 const Rating = ({ dataRating }) => {
   const startState = [1, 2, 3, 4, 5];
 
   return (
-    <div className={RatingStyle.container}>
+    <div className={ratingStyle.container__rating}>
       {startState.map((starIndex) => (
         <i
           key={starIndex}
           className={`fas fa-duotone fa-star ${
             starIndex <= parseInt(dataRating)
-              ? RatingStyle.pinkStar
-              : RatingStyle.grayStar
+              ? ratingStyle.container__rating__pinkStar
+              : ratingStyle.container__rating__grayStar
           }`}
         ></i>
       ))}
     </div>
   );
+};
+
+Rating.propTypes = {
+  dataRating: PropTypes.string.isRequired,
 };
 
 export default Rating;

@@ -1,5 +1,4 @@
 @use "../../styles/utils/_variables";
-@use "../../styles/utils/_keyframes";
 @use "../../styles/utils/_breakpoints";
 
 .container {
@@ -14,7 +13,7 @@
     width: 100%;
   }
 
-  .collapse {
+  &__collapse {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -57,54 +56,66 @@
       }
 
       &.toggleUp {
-        animation: rotateUp 0.5s forwards;
-        @include keyframes.rotateUp;
+        transform: rotate(-180deg);
+        transition: 0.5s;
       }
 
-      // ! A voir pourquoi la functiionaliter ne marche pas a cause de l'etat false qui est active directement
-      // &.toggleDown {
-      //  animation: rotateDown 0.5s forwards;
-      //  @include keyframes.rotateDown;
-      // }
+      &.toggleDown {
+        transform: rotate(0deg);
+        transition: 0.5s;
+      }
     }
   }
 
-  .content {
+  &__content {
     background-color: variables.$primary;
     width: 97%;
     height: auto;
     border-radius: 0px 0px 10px 10px;
+    opacity: 1;
+    transform: translateY(-50px);
+    transition: opacity 0.5s, transform 0.5s;
 
-    &.active {
-      animation: slideDown 500ms both;
-      @include keyframes.slideDown;
+    &__active {
+      opacity: 1;
+      transform: translateY(0px);
     }
 
-    // ! A voir pourquoi la functiionaliter ne marche pas a cause de l'etat false qui est active directement
-    // &.disabled {
-    //   animation: slideUp 500ms both;
-    //   @include keyframes.slideUp;
-    // }
-
-    p {
+    &__text {
       margin: 20px;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 1.5;
-      color: variables.$quinary;
-      text-align: left;
 
-      @include breakpoints.custom-media-query(768) {
-        font-size: 18px;
-      }
+      p {
+        color: variables.$quinary;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: left;
 
-      @include breakpoints.custom-media-query(600) {
-        font-size: 16px;
+        @include breakpoints.custom-media-query(768) {
+          font-size: 18px;
+        }
+
+        @include breakpoints.custom-media-query(600) {
+          font-size: 16px;
+        }
       }
 
       ul {
+        color: variables.$quinary;
         list-style: none;
         gap: 5px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: left;
+
+        @include breakpoints.custom-media-query(768) {
+          font-size: 18px;
+        }
+
+        @include breakpoints.custom-media-query(600) {
+          font-size: 16px;
+        }
       }
     }
   }

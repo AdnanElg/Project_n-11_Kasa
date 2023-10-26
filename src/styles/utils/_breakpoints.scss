@@ -1,5 +1,4 @@
 // Media-queries responsive design :
-
 @mixin custom-media-query($max-width) {
   @media (max-width: #{$max-width}px) {
     @content;

@@ -1,7 +1,7 @@
 @use "../../styles/utils/_variables";
 @use "../../styles/utils/_breakpoints";
 
-.container {
+.container__rating {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -15,11 +15,11 @@
     font-weight: 600;
   }
 
-  .pinkStar {
+  &__pinkStar {
     color: variables.$quinary;
   }
 
-  .grayStar {
+  &__grayStar {
     color: variables.$septenary;
   }
 }

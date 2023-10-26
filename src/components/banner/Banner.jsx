@@ -1,22 +1,22 @@
-import BannerStyle from "./Banner.module.scss";
-import bannerHome from "../../assets/img/bannerHome.png";
-import bannerAbout from "../../assets/img/bannerAbout.png";
-import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+import bannerStyle from "./Banner.module.scss";
 
-const Banner = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-
+const Banner = ({ imgBanner, titleBanner }) => {
   return (
     <section
-      className={BannerStyle.section__banner}
+      className={bannerStyle.section__banner}
       style={{
-        background: isHomePage ? `url(${bannerHome})` : `url(${bannerAbout})`,
+        background: `url(${imgBanner})`,
       }}
     >
-      {isHomePage && <h1>Chez vous, partout et ailleurs</h1>}
+      <h1>{titleBanner}</h1>
     </section>
   );
+};
+
+Banner.propTypes = {
+  imgBanner: PropTypes.string.isRequired,
+  titleBanner: PropTypes.string,
 };
 
 export default Banner;

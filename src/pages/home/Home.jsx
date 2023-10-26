@@ -1,17 +1,19 @@
 import { useApiCallHome } from "../../hook/useApiCallHome.jsx";
-import spinner from "../../assets/svg/spinner.svg";
 import Card from "../../components/card/Card.jsx";
 import Banner from "../../components/banner/Banner.jsx";
-import HomeStyle from "./Home.module.scss";
+import homeStyle from "./Home.module.scss";
+import bannerHome from "../../assets/img/bannerHome.png";
 
 const Home = () => {
   const { apiState } = useApiCallHome();
 
   return (
-    <main className={HomeStyle.container__main}>
-      <Banner />
-      <section className={HomeStyle.section__cards}>
-        {apiState.loading && <img src={spinner} alt="icône de chargeement" />}
+    <main className={homeStyle.container__main}>
+      <Banner
+        titleBanner="Chez vous, partout et ailleurs"
+        imgBanner={bannerHome}
+      />
+      <section className={homeStyle.container__main__sectionCards}>
         {apiState.error && <p>Une erreur est survenue...</p>}
         {apiState.data?.length > 0 &&
           apiState.data.map((item) => (
