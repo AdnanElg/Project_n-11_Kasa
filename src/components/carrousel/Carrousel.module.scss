@@ -1,5 +1,7 @@
+// importation des fichier nécessaire au style :
 @use "../../styles/utils/_breakpoints";
 
+// Style carrousel :
 .container__carrouselGallery {
   display: flex;
   flex-direction: row;

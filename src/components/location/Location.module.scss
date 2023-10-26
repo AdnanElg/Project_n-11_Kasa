@@ -1,6 +1,8 @@
+// importation des fichier nécessaire au style :
 @use "../../styles/utils/_variables";
 @use "../../styles/utils/_breakpoints";
 
+// Style location :
 .container__location {
   display: flex;
   justify-content: flex-start;

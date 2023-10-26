@@ -1,9 +1,11 @@
+// Importation des modules nécessaires :
 import { useApiCallHome } from "../../hook/useApiCallHome.jsx";
 import Card from "../../components/card/Card.jsx";
 import Banner from "../../components/banner/Banner.jsx";
 import homeStyle from "./Home.module.scss";
 import bannerHome from "../../assets/img/bannerHome.png";
 
+// Définition du composant Home :
 const Home = () => {
   const { apiState } = useApiCallHome();
 
@@ -32,4 +34,5 @@ const Home = () => {
   );
 };
 
+// Exportation du composant Home pour qu'il puisse être utilisé ailleurs :
 export default Home;

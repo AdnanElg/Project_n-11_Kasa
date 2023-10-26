@@ -1,6 +1,8 @@
+// Importation des modules nécessaires :
 import { HousingData } from "../data/HousingData.json";
 import { useEffect, useState } from "react";
 
+// Définition du composant useApiCallHome :
 export const useApiCallHome = () => {
   const [apiState, setApiState] = useState({
     error: false,

@@ -1,7 +1,9 @@
+// Importation des modules nécessaires :
 import navbarStyle from "./Navbar.module.scss";
 import logoHeader from "../../assets/svg/logoHeader.svg";
 import { NavLink } from "react-router-dom";
 
+// Définition du composant Navbar :
 const Navbar = () => {
   return (
     <header className={navbarStyle.container__header}>
@@ -28,4 +30,5 @@ const Navbar = () => {
   );
 };
 
+// Exportation du composant Navbar pour qu'il puisse être utilisé ailleurs :
 export default Navbar;

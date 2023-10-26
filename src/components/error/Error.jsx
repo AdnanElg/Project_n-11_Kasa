@@ -1,8 +1,10 @@
+// Importation des modules nécessaires :
 /* eslint-disable react/no-unescaped-entities */
 import notFound from "../../assets/svg/notFound.svg";
 import { NavLink } from "react-router-dom";
 import errorStyle from "./Error.module.scss";
 
+// Définition du composant Error :
 const Error = () => {
   return (
     <section className={errorStyle.section__error}>
@@ -15,4 +17,5 @@ const Error = () => {
   );
 };
 
+// Exportation du composant Error pour qu'il puisse être utilisé ailleurs :
 export default Error;

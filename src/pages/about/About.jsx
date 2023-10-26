@@ -1,9 +1,11 @@
+// Importation des modules nécessaires :
 import Banner from "../../components/banner/Banner.jsx";
 import Collapse from "../../components/collapse/Collapse.jsx";
 import aboutStyle from "../about/About.module.scss";
 import bannerAbout from "../../assets/img/bannerAbout.png";
 import { useApiCallAbout } from "../../hook/useApiCallAbout.jsx";
 
+// Définition du composant About :
 const About = () => {
   const { apiState } = useApiCallAbout();
 
@@ -28,4 +30,5 @@ const About = () => {
   );
 };
 
+// Exportation du composant About pour qu'il puisse être utilisé ailleurs :
 export default About;

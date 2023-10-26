@@ -1,6 +1,8 @@
+// Importation des modules nécessaires :
 import PropTypes from "prop-types";
 import locationStyle from "./Location.module.scss";
 
+// Définition du composant Location :
 const Location = ({ dataTitle, dataLocation }) => {
   return (
     <div className={locationStyle.container__location}>
@@ -10,9 +12,11 @@ const Location = ({ dataTitle, dataLocation }) => {
   );
 };
 
+// Définition des types attendus pour les propriétés (props) du composant Location :
 Location.propTypes = {
   dataTitle: PropTypes.string.isRequired,
   dataLocation: PropTypes.string.isRequired,
 };
 
+// Exportation du composant Location pour qu'il puisse être utilisé ailleurs :
 export default Location;

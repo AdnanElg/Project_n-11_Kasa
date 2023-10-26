@@ -1,6 +1,8 @@
+// Importation des modules nécessaires :
 import PropTypes from "prop-types";
 import ratingStyle from "./Rating.module.scss";
 
+// Définition du composant Rating :
 const Rating = ({ dataRating }) => {
   const startState = [1, 2, 3, 4, 5];
 
@@ -20,8 +22,10 @@ const Rating = ({ dataRating }) => {
   );
 };
 
+// Définition des types attendus pour les propriétés (props) du composant Rating :
 Rating.propTypes = {
   dataRating: PropTypes.string.isRequired,
 };
 
+// Exportation du composant Rating pour qu'il puisse être utilisé ailleurs :
 export default Rating;

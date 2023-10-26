@@ -1,6 +1,8 @@
+// Importation des modules nécessaires :
 import { AboutData } from "../data/AboutData.json";
 import { useEffect, useState } from "react";
 
+// Définition du composant useApiCallAbout :
 export const useApiCallAbout = () => {
   const [apiState, setApiState] = useState({
     error: false,

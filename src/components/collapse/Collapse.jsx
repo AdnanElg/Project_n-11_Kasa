@@ -1,11 +1,14 @@
+// Importation des modules nécessaires :
 import PropTypes from "prop-types";
 import arrow_top from "../../assets/svg/arrow_top.svg";
 import { useState } from "react";
 import collapseStyle from "./Collapse.module.scss";
 
+// Définition du composant Collapse :
 const Collapse = ({ dataEquipment, dataDescription, datatitle }) => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
+  // Fonction pour gérer l'ouverture/fermeture d'un collapse :
   const handleClick = () => {
     setOpenCollapse(!openCollapse);
   };
@@ -44,10 +47,12 @@ const Collapse = ({ dataEquipment, dataDescription, datatitle }) => {
   );
 };
 
+// Définition des types attendus pour les propriétés (props) du composant Collapse :
 Collapse.propTypes = {
   dataEquipment: PropTypes.arrayOf(PropTypes.string),
   dataDescription: PropTypes.string,
   datatitle: PropTypes.string,
 };
 
+// Exportation du composant Collapse pour qu'il puisse être utilisé ailleurs :
 export default Collapse;

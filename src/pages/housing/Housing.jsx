@@ -1,3 +1,4 @@
+// Importation des modules nécessaires :
 import housingStyle from "./Housing.module.scss";
 import { useParams } from "react-router-dom";
 import { useApiCallHousing } from "../../hook/useApiCallHousing.jsx";
@@ -8,6 +9,7 @@ import Tag from "../../components/tag/Tag.jsx";
 import Rating from "../../components/rating/Rating.jsx";
 import Collapse from "../../components/collapse/Collapse.jsx";
 
+// Définition du composant Housing :
 const Housing = () => {
   const { id } = useParams();
   const { apiState } = useApiCallHousing(id);
@@ -72,4 +74,5 @@ const Housing = () => {
   );
 };
 
+// Exportation du composant Housing pour qu'il puisse être utilisé ailleurs :
 export default Housing;

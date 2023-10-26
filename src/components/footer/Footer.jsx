@@ -1,6 +1,8 @@
+// Importation des modules nécessaires :
 import footerStyle from "./Footer.module.scss";
 import logoFooter from "../../assets/svg/logoFooter.svg";
 
+// Définition du composant Footer :
 const Footer = () => {
   return (
     <footer className={footerStyle.container__footer}>
@@ -10,4 +12,5 @@ const Footer = () => {
   );
 };
 
+// Exportation du composant Footer pour qu'il puisse être utilisé ailleurs :
 export default Footer;

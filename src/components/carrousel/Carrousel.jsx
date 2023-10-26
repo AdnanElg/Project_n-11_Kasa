@@ -1,18 +1,22 @@
+// Importation des modules nécessaires :
 import PropTypes from "prop-types";
 import carrouselStyle from "./Carrousel.module.scss";
 import arrow_back from "../../assets/svg/arrow_back.svg";
 import arrow_next from "../../assets/svg/arrow_next.svg";
 import { useState } from "react";
 
+// Définition du composant Carrousel :
 const Carrousel = ({ dataPictures, dataTitle }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Fonction pour gérer le slide précédent :
   const handlePreviousSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? dataPictures.length - 1 : prevIndex - 1
     );
   };
 
+  // Fonction pour gérer le slide suivant :
   const handleNextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === dataPictures.length - 1 ? 0 : prevIndex + 1
@@ -51,9 +55,11 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
   );
 };
 
+// Définition des types attendus pour les propriétés (props) du composant Carrousel :
 Carrousel.propTypes = {
   dataPictures: PropTypes.arrayOf(PropTypes.string).isRequired,
   dataTitle: PropTypes.string.isRequired,
 };
 
+// Exportation du composant Carrousel pour qu'il puisse être utilisé ailleurs :
 export default Carrousel;

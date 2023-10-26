@@ -1,7 +1,9 @@
+// Importation des modules nécessaires :
 import { HousingData } from "../data/HousingData.json";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Définition du composant useApiCallHousing :
 export const useApiCallHousing = (id) => {
   const [apiState, setApiState] = useState({
     error: false,
