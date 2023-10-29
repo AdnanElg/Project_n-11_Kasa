@@ -11,11 +11,11 @@ export const useApiCallHome = () => {
 
   useEffect(() => {
     try {
-      setApiState({ loading: false, error: false, data: HousingData });
+      setApiState({ error: false, data: HousingData });
     } catch (error) {
       throw (
         (new Error("An unexpected error occurred : " + error),
-        setApiState({ loading: false, error: true, data: null }))
+        setApiState({ error: true, data: null }))
       );
     }
   }, []);

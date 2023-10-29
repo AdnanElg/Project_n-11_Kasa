@@ -11,15 +11,27 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
 
   // Fonction pour gérer le slide précédent :
   const handlePreviousSlide = () => {
+    // Utilisation de la fonction setCurrentIndex pour mettre à jour l'indice de la diapositive actuelle.
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? dataPictures.length - 1 : prevIndex - 1
+      // Vérification : Si l'indice actuel (prevIndex) est égal à 0, alors...
+      prevIndex === 0
+        // ...retournez la valeur de l'indice à la fin du tableau de données (dataPictures.length - 1),
+        // sinon, décrémentez l'indice de 1 pour passer à la diapositive précédente.
+        ? dataPictures.length - 1
+        : prevIndex - 1
     );
   };
 
   // Fonction pour gérer le slide suivant :
   const handleNextSlide = () => {
+    // Utilisation de la fonction setCurrentIndex pour mettre à jour l'indice de la diapositive actuelle.
     setCurrentIndex((prevIndex) =>
-      prevIndex === dataPictures.length - 1 ? 0 : prevIndex + 1
+      // Vérification : Si l'indice actuel (prevIndex) est égal à la longueur du tableau de données moins 1, alors...
+      prevIndex === dataPictures.length - 1
+        // ...retournez l'indice à 0 pour revenir à la première diapositive,
+        // sinon, incrémentez l'indice de 1 pour passer à la diapositive suivante.
+        ? 0
+        : prevIndex + 1
     );
   };
 

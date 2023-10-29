@@ -11,11 +11,11 @@ export const useApiCallAbout = () => {
 
   useEffect(() => {
     try {
-      setApiState({ loading: false, error: false, data: AboutData });
+      setApiState({ error: false, data: AboutData });
     } catch (error) {
       throw (
         (new Error("An unexpected error occurred : " + error),
-        setApiState({ loading: false, error: true, data: null }))
+        setApiState({ error: true, data: null }))
       );
     }
   }, []);

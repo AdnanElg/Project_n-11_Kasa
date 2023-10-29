@@ -17,14 +17,14 @@ export const useApiCallHousing = (id) => {
       const housingById = HousingData.find((databyId) => databyId.id === id);
 
       if (housingById) {
-        setApiState({ loading: false, error: false, data: housingById });
+        setApiState({ error: false, data: housingById });
       } else {
         navigate("/404");
       }
     } catch (error) {
       throw (
         (new Error("An unexpected error occurred : " + error),
-        setApiState({ loading: false, error: true, data: null }))
+        setApiState({ error: true, data: null }))
       );
     }
   }, []);
