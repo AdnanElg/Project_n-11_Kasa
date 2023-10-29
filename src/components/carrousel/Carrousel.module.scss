@@ -1,5 +1,6 @@
 // importation des fichier nécessaire au style :
 @use "../../styles/utils/_breakpoints";
+@use "../../styles/utils/_variables";
 
 // Style carrousel :
 .container__carrouselGallery {
@@ -63,6 +64,18 @@
       @include breakpoints.custom-media-query(600) {
         width: 60%;
       }
+    }
+  }
+
+  &__slideCount {
+    color: variables.$tertiary;
+    font-size: 23px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 30px;
+
+    @include breakpoints.custom-media-query(600) {
+     display: none;
     }
   }
 }

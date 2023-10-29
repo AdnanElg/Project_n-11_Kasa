@@ -55,7 +55,7 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
                 : carrouselStyle.hidden
             }
           />
-        );
+        )
       })}
       <span
         className={carrouselStyle.container__carrouselGallery__arrowNext}
@@ -63,6 +63,11 @@ const Carrousel = ({ dataPictures, dataTitle }) => {
       >
         {dataPictures.length > 1 && <img src={arrow_next} alt="arrow next" />}
       </span>
+      
+     
+      <p className={carrouselStyle.container__carrouselGallery__slideCount}>
+        {currentIndex + 1}/{dataPictures.length}
+      </p>
     </div>
   );
 };
