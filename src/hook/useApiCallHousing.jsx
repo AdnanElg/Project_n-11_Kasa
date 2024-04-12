@@ -27,7 +27,7 @@ export const useApiCallHousing = (id) => {
         setApiState({ error: true, data: null }))
       );
     }
-  }, []);
+  }, [id, navigate]);
 
   return { apiState };
 };
